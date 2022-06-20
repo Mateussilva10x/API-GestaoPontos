@@ -20,6 +20,7 @@ A aplicação consiste em dois endpoints
 /markers e /markers/:markerId
 
 O endpoint /markers pode ser utilizado com os métodos GET, POST e DELETE.
+
 [GET] /markers:
 
     response: [
