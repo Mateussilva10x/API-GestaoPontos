@@ -4,7 +4,7 @@ class MarkerController {
   static async ListAllMarkers(_, res) {
     try {
       const allMarkers = await database.Markers.findAll();
-      return res.status(302).json(allMarkers);
+      return res.status(200).json(allMarkers);
     } catch (erro) {
       return res.status(500).json({ erro: erro.message });
     }
@@ -18,7 +18,7 @@ class MarkerController {
       });
       return res.status(302).json(oneMarker);
     } catch (erro) {
-      return res.status(500).json(erro.message);
+      return res.status(404).json(erro.message);
     }
   }
 
@@ -28,7 +28,7 @@ class MarkerController {
       const newMarkerCreated = await database.Markers.create(newMarker);
       return res.status(201).json(newMarkerCreated);
     } catch (erro) {
-      return res.status(500).json({ erro: erro.message });
+      return res.status(400).json({ erro: erro.message });
     }
   }
 
@@ -45,7 +45,7 @@ class MarkerController {
       });
       return res.status(200).json(updatedMarker);
     } catch (erro) {
-      return res.status(500).json({ erro: erro.message });
+      return res.status(400).json({ erro: erro.message });
     }
   }
 
@@ -57,6 +57,15 @@ class MarkerController {
       return res
         .status(200)
         .json({ message: `Marker from id ${markerId} Deleted` });
+    } catch (erro) {
+      return res.status(400).json({ erro: erro.message });
+    }
+  }
+
+  static async DeleteAllMarkers(_, res) {
+    try {
+      await database.Markers.destroy({ where: {}, truncate: true });
+      return res.status(200).json({ message: `All Markers Deleted` });
     } catch (erro) {
       return res.status(500).json({ erro: erro.message });
     }
