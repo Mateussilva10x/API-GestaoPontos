@@ -56,6 +56,7 @@ O endpoint /markers pode ser utilizado com os métodos GET, POST e DELETE.
 O endpoint /markers/:markerId pode ser utilizado para os métodos GET, PUT e DELETE
 
 [GET] /markers/:markerId:
+
 params: /marker/1
 
     response:[
@@ -68,6 +69,7 @@ params: /marker/1
     ]
 
 [PUT] /markers/:markerId:
+
 params: /marker/3
 
     body: {
@@ -84,6 +86,7 @@ params: /marker/3
     }
 
 [DELETE] /markers/:markerId
+
 params: /marker/2
 
     response: {message: Marker from id 2 Deleted}
