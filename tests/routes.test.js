@@ -8,8 +8,8 @@ describe("insert", () => {
     lat: -15.2728,
     lng: -53.5901,
     draggable: true,
-    createdAt: "2022-06-20T11:40:43.000Z",
-    updatedAt: "2022-06-20T11:40:43.000Z",
+    updatedAt: "2022-06-20T12:17:34.000Z",
+    createdAt: "2022-06-20T12:17:34.000Z",
   };
 
   it("GET/markers should return a array and status code 200", async () => {
@@ -112,9 +112,5 @@ describe("insert", () => {
   it("DELETE/markers/:markerId should return a status code 400", async () => {
     jest.setTimeout(10000);
     await request(app).delete("/markers/invalidId").expect(400);
-  });
-
-  it("DELETE/markers should return a status code 200", async () => {
-    jest.setTimeout(10000);
   });
 });
