@@ -24,12 +24,12 @@ O endpoint /markers pode ser utilizado com os métodos GET, POST e DELETE.
 [GET] /markers:
 
     response: [
-    {
-        id: 1,
-        lat: 123,
-        lng: 456,
-        draggable: true
-    },
+      {
+          id: 1,
+          lat: 123,
+          lng: 456,
+          draggable: true
+      },
     ]
 
 [POST] /markers:
